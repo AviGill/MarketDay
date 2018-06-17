@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+    <link href="C:\Users\User\Desktop\style.css" rel="stylesheet" type="text/css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <style>
+    body {
+	margin: 0;
+	background: #fff;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 800;
+    padding: 0;
+}
+
+nav {  
+  width: 100%;
+  height: 110px;
+  background: #FA8072; 
+}
+
+footer {
+     background: #FA8072;
+}
+
+nav ul {
+  margin: 0 auto;
+  padding: 0;
+  width: 80%;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 70px;
+  padding: 40px;
+  list-style: none;
+  position: relative;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.toogle
+{
+    width: 100%;
+    padding: 10px;
+    background: #001f44;
+    text-align: right;
+    color: #fff;
+    font-size: 25px;
+    display: none;
+}
+
+@media (max-width:700px)
+{
+    .toogle{
+        display: block;
+    }
+    ul 
+    {
+    width: 100%;
+    display: none;
+    }
+    ul li 
+    {
+    display: block;
+    text-align: center;
+    }
+    .active
+    {
+        display: block;
+    }
+}
+ 
+
+
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  padding: 5px 0;
+  height: 95px;
+  width: 150px;
+}
+.login {
+    float:right;
+}
+
+
+nav a:hover {
+  color: #fff;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #fff;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+.header {
+   background-color: #000000;
+   background-image: url(http://www.bctree.com/image/w2000-h800-c20:8/files/591dcb63-2d5c-48be-ac12-1728cf665f30.jpg); 
+   background-position: 100% 100%;
+   background-repeat: no-repeat;
+   height: 350px;
+   width: 1300px;
+   
+}
+.footer {
+   position: fixed; 
+   text-align: center;
+   width: 100%;
+   height: 110px;
+   background: #00316b;
+}
+
+.container {
+    position: relative;
+    width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 20px;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  border-radius: 50%;
+  height: 100px;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+div.gallery {
+    border: 2px solid #ccc;
+}
+
+div.gallery:hover {
+    border: 5px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 0 2px;
+    float: right;
+    width: 24.99999%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .responsive {
+        width: 98.99999%;
+        margin: 8px 9;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 320px 500px;
+    cursor: pointer;
+    float: center;
+}
+
+
+    </style>
+</head>
+
+<body>
+       
+<!-- Navigation -->
+<div class="w3-top">
+          <img src="C:\avi\Marketday-Server" alt="logo" class="logo">                   
+          <nav>
+          <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            <ul>  
+                <img src="https://nesea.org/sites/default/files/styles/thumbnail/public/user-icon-default_7496.png?itok=7T8FUjFN" alt="login" class="login"> 
+                <div class="topnav-right">
+                    <li><a href="{% url 'search' %}" class="w3-bar-item w3-padding-large">Find Markets</a></li>
+                    <li><a href="{% url 'login' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Login</a></li>     
+                </div>                
+                                                                   
+            </ul>
+          </nav>
+          
+          <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Find Markets</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">Login</a>   
+        </div>
+</div>
+          
+<!-- Header -->
+
+          <header class="header">                       
+            
+            <button class="button button">FIND RIGHT MARKETS</button>
+          </header>
+          
+ <!-- First Grid -->
+ 
+          <div class="w3-row-padding w3-white w3-padding-64 w3-container">
+             <div class="w3-content">
+                <div class="w3-twothird">
+                   <h1>Discover BC's Farmers Markets</h1>
+                   <h5 class="w3-padding-32">We utilize improved technology to create web application, in which information is easily accessible by the people around the globe. We display different markets in organized and structured way to keep users informed about ongoing campaigns/seminars/fairs. </h5>
+
+                   <p class="w3-text-black">Our aim is to help people find great local businesses; that is the reason, we are going to develop an online platform in form of site. Creating online space will provide a wonderful platform for small businesses to strengthen their firm.
+                   </p>
+                </div>
+
+                <div class="w3-third w3-center">
+                   <img src="https://www.salzburg.info/deskline/infrastruktur/objekte/gruenmarkt_4584/image-thumb__383__teaser--topic/gruenmarkt-in-salzburg_4586.jpeg" alt="img" class="img">
+                </div>
+              </div>
+          </div>
+
+
+ <!-- Second Grid -->
+ 
+          <div class="w3-row-padding w3-pale-red w3-padding-64 w3-container">
+             <div class="w3-content">
+                
+
+                <div class="w3-row">
+                    <div class="w3-padding-16"><span class="w3-xlarge w3-border-red w3-bottombar w3-center">Features</span></div>
+                    <h5 class="w3-padding-32">This is what we offer!!!</h5>
+       
+                    <div class="responsive">
+                        <div class="gallery">
+                            <a target="_blank" href="img_fjords.jpg">
+                            <img src="http://www.wajeez.com/wp-content/uploads/2016/04/growth-feature-250.jpg" alt="Growth" width="300" height="200">
+                            </a>
+                            <div class="desc">Grow small business by asseccing high value markets.</div>
+                        </div>
+                    </div>
+
+
+                    <div class="responsive">
+                        <div class="gallery">
+                            <a target="_blank" href="img_forest.jpg">
+                            <img src="https://www.allinclusivemarketing.com/wp-content/uploads/2015/12/affiliate-marketing-trends-in-2016.jpg" alt="Forest" width="600" height="400">
+                            </a>
+                            <div class="desc">Learn about new trends of marketing.</div>
+                        </div>
+                    </div>
+
+                    <div class="responsive">
+                        <div class="gallery">
+                            <a target="_blank" href="img_lights.jpg">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN9ie1AkEDCc9Z0_sW0qc56GbGVklo_mzim8o70lnVXCPbAX_g" alt="Northern Lights" width="600" height="400">
+                            </a>
+                            <div class="desc">Meeting and interacting with customers is easy.</div>
+                        </div>
+                    </div>
+
+                    <div class="responsive">
+                        <div class="gallery">
+                            <a target="_blank" href="img_mountains.jpg">
+                            <img src="data:image/jpeg;base64,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" alt="Mountains" width="600" height="500">
+                            </a>
+                            <div class="desc">Connect with market owners and learn new skills about marketing.</div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div style="padding:64px;"></div>
+            
+                </div>
+             </div>
+          </div>
+
+          
+<!-- Contact Container -->
+          
+<div class="w3-container w3-white w3-padding-64 w3-theme-l5 " id="contact">
+  <div class="w3-row">
+    <div class="w3-col m5">
+    <div class="w3-padding-16"><span class="w3-xlarge w3-border-red w3-bottombar w3-center">Contact Us</span></div>
+      <h3>Address</h3>
+      
+    </div>
+    <div class="w3-col m7">
+      <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
+      <div class="w3-section">      
+        <label>Name</label>
+        <input class="w3-input" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">      
+        <label>Email</label>
+        <input class="w3-input" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">      
+        <label>Message</label>
+        <input class="w3-input" type="text" name="Message" required>
+      </div>  
+      <input class="w3-check" type="checkbox" checked name="Like">
+      <label>I Like it!</label>
+      <button type="submit" class="w3-button w3-right w3-theme">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+
+     
+<footer class="w3-container w3-padding-16 w3-center "> 
+        <p>Social Links </p> 
+  <div class="w3-xlarge w3-padding-8">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+ </div>
+ 
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+    
+</body>
+
+</html>
