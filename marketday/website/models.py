@@ -5,11 +5,9 @@ from django.db.models.signals import post_save
 class Market(models.Model):
 	name = models.CharField(max_length=256, default='', blank=False)
 	address = models.CharField(max_length=256, default='', blank=False)
-	description = models.CharField(max_length=2048, default='', blank=True)
+	time = models.CharField(max_length=2048, default='', blank=True)
 	location = models.CharField(max_length=256, default='', blank=False)
-	photo = models.CharField(max_length=1024, default='', blank=True)
-	sunday_hours = models.CharField(max_length=256, default='Closed', blank=False)
-	monday_hours = models.CharField(max_length=256, default='Closed', blank=False)
+
 
 
 class UserProfile(models.Model):
@@ -24,6 +22,8 @@ def create_profile(sender, **kwargs):
 		user_profile = UserProfile.objects.create(user=kwargs['instance'])
 
 post_save.connect(create_profile, sender=User)
+
+
 
 
 

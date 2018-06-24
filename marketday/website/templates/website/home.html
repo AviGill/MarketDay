@@ -269,7 +269,8 @@ div.desc {
        
 <!-- Navigation -->
 <div class="w3-top">
-          <img src="C:\avi\Marketday-Server" alt="logo" class="logo">                   
+        <a href="{% url 'home' %}"><img src="C:\Users\avnee\Downloads\logo.png" alt="logo" class="logo"></a>                   
+        <nav>                   
           <nav>
           <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
             <ul>  
@@ -284,8 +285,8 @@ div.desc {
           
           <!-- Navbar on small screens -->
         <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-            <a href="#" class="w3-bar-item w3-button w3-padding-large">Find Markets</a>
-            <a href="#" class="w3-bar-item w3-button w3-padding-large">Login</a>   
+            <a href="{% url 'search' %}" class="w3-bar-item w3-button w3-padding-large">Find Markets</a>
+            <a href="{% url 'login' %}" class="w3-bar-item w3-button w3-padding-large">Login</a>   
         </div>
 </div>
           
@@ -293,7 +294,7 @@ div.desc {
 
           <header class="header">                       
             
-            <button class="button button">FIND RIGHT MARKETS</button>
+                <a href="{% url 'search' %}"> <button class="button button">FIND RIGHT MARKETS</button></a>
           </header>
           
  <!-- First Grid -->

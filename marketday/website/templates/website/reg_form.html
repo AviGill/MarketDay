@@ -10,7 +10,7 @@
 <style>
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #ffcccc;
+    background-color: white;
 }
 
 * {
@@ -207,14 +207,15 @@ nav a:hover::before {
 
 <!-- Navigation -->
 
-          <img src="C:\Users\User\Desktop\logo.png" alt="logo" class="logo">                   
-          <nav>
+<a href="{% url 'home' %}"><img src="C:\Users\avnee\Downloads\logo.png" alt="logo" class="logo"></a>                   
+          <nav>                   
+          
           <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large  w3-padding-large w3-hover-white w3-large " href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
             <ul>  
                 <img src="https://nesea.org/sites/default/files/styles/thumbnail/public/user-icon-default_7496.png?itok=7T8FUjFN" alt="login" class="login"> 
                 <div class="topnav-right">
-                    <li><a href="#">Find Markets</a></li>
-                    <li><a href="#">Login</a></li>     
+                    <li><a href="{% url 'search' %}">Find Markets</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>     
                 </div>                
                                                                    
             </ul>
@@ -225,19 +226,19 @@ nav a:hover::before {
           <header class="header">                       
             <button class="button button">BECOME A MEMBER</button>           
           </header>
-<form method="post">
-    {% csrf_token %}
+   <form method="post">
+   
     <div class="w3-half w3-container w3-padding-64">
               
     <div class="container">
-        <div class="w3-panel w3-bottombar w3-topbar w3-pale-red w3-border-red w3-xlarge"><p>REGISTER</p>
+        <div class="w3-panel w3-bottombar w3-topbar w3-pale-red w3-border-red w3-large"><p>REGISTER</p>
     </div>
                   
-        <p>Please fill in this form to create an account.</p>
+    {% csrf_token %}
         {{ form.as_p }}
               
                   
-        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+        
               
         <button type="submit" class="registerbtn">Register</button>
     </form>
@@ -253,19 +254,32 @@ nav a:hover::before {
                 
                 
     </div>
+   
 
+     
+ <footer class="w3-container w3-padding-16 w3-center "> 
+    <p>Social Links </p> 
+<div class="w3-xlarge w3-padding-8">
+<i class="fa fa-facebook-official w3-hover-opacity"></i>
+<i class="fa fa-instagram w3-hover-opacity"></i>
+<i class="fa fa-snapchat w3-hover-opacity"></i>
+<i class="fa fa-pinterest-p w3-hover-opacity"></i>
+<i class="fa fa-twitter w3-hover-opacity"></i>
+<i class="fa fa-linkedin w3-hover-opacity"></i>
+</div>
 
-
-
-
-
-
-  </div>
-  
-  
- 
-  
-  </div>
+</footer>
+<script>
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else { 
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+    </script>
 
 
 </body>

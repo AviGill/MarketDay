@@ -14,7 +14,7 @@
     <style>
     body {
     margin: 0;
-    background: #fff;
+    background: white;
     font-family: 'Work Sans', sans-serif;
     font-weight: 800;
     padding: 0;
@@ -309,7 +309,7 @@ div.desc {
 }
 
 .topnav .search-container button:hover {
-  background: #ccc;
+  background:white;
 }
 
 @media screen and (max-width: 600px) {
@@ -327,6 +327,44 @@ div.desc {
   .topnav input[type=text] {
     border: 1px solid #ccc;  
   }
+  body {
+    font-family: Arial;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background: #0b7dda;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 }
 
 
@@ -337,13 +375,14 @@ div.desc {
        
 <!-- Navigation -->
 
-          <img src="C:\Users\User\Desktop\logo.png" alt="logo" class="logo">                   
+<a href="{% url 'home' %}"><img src="C:\Users\avnee\Downloads\logo.png" alt="logo" class="logo"></a>                   
+<nav>                   
           <nav>
           <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large  w3-padding-large w3-hover-white w3-large " href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
             <ul>  
                 <img src="https://nesea.org/sites/default/files/styles/thumbnail/public/user-icon-default_7496.png?itok=7T8FUjFN" alt="login" class="login"> 
                 <div class="topnav-right">
-                    <li><a href="#">Find Markets</a></li>
+                    <li><a href="{% url 'search' %}">Find Markets</a></li>
                     <li><a href="{% url 'login' %}">Login</a></li>     
                 </div>                                                           
             </ul>
@@ -366,15 +405,19 @@ div.desc {
                 </div>                             
                 
                 <div class="search-container w3-left">
-                <form method="post" action="/marketday/findmarket/">
+                <form lass="example" method="post" action="/marketday/findmarket/">
+                
+                  
+
+
                   {% csrf_token %}
-                  <div class="form-group">
-                     <div class="col-lg-5">
+                  <div class="container">
+                     
    
                   <input type="text" name="srh" class="form-control" placeholder="Enter name or city">
                   </div>
                   <label class="col-lg-2">
-                     <button type="submit" class="btn btn-danger">Search</button>
+                     <button type="submit" class="fa fa-search">Search</button>
                   </label>
                   </div>
                 </form>
@@ -408,8 +451,12 @@ div.desc {
 
                        </tr>
                        <tr>
-                           <td>Description</td>
-                           <td>{{ k.description }}</td>
+                           <td>Location</td>
+                           <td>{{ k.location }}</td>
+
+                       <tr>
+                            <td>Time</td>
+                            <td>{{ k.time }}</td>
 
                        </tr>
        

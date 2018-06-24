@@ -14,18 +14,20 @@ from website.forms import RegistrationForm
 
 
 
+
 def home(request):
     return render(request, 'website/home.html')
 
 def loggedin(request):
-    return render(request, 'website/loggedin.html')
+    args = {'user': request.user}
+    return render(request, 'website/loggedin.html', args)
 
 def search(request):
     if request.method=='POST':
         srch = request.POST['srh']
 
         if srch:
-            match = Market.objects.filter(Q(name__icontains=srch))
+            match = Market.objects.filter(Q(location__icontains=srch))
           
             
 
@@ -42,14 +44,17 @@ def search(request):
 def register(request):
     if request.method =='POST':
         form = RegistrationForm(request.POST)
-        if form.is_valid():
+        if form.is_valid(): 
             form.save()
-            return redirect('/marketday/findmarket')
+            return redirect('/marketday/login')
 
     else:
         form = RegistrationForm()
         args = {'form': form}
         return render(request, 'website/reg_form.html', args)
+
+
+
 
 
 

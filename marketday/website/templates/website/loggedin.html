@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
     body {
 	margin: 0;
@@ -261,6 +262,43 @@ div.desc {
     float: center;
 }
 
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
+
 
     </style>
 </head>
@@ -269,14 +307,15 @@ div.desc {
        
 <!-- Navigation -->
 
-          <img src="C:\Users\User\Desktop\logo.png" alt="logo" class="logo">                   
+<a href="{% url 'home' %}"><img src="C:\Users\avnee\Downloads\logo.png" alt="logo" class="logo"></a>                   
+<nav>                   
           <nav>
           <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large  w3-padding-large w3-hover-white w3-large " href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
             <ul>  
                 <img src="https://nesea.org/sites/default/files/styles/thumbnail/public/user-icon-default_7496.png?itok=7T8FUjFN" alt="login" class="login"> 
                 <div class="topnav-right">
                     <li><a href="{% url 'search' %}">Find Markets</a></li>
-                    <li><a href="{% url 'login' %}">Login</a></li>     
+                    <li><a href="{% url 'home' %}">Logout</a></li>     
                 </div>                
                                                                    
             </ul>
@@ -286,8 +325,48 @@ div.desc {
 
           <header class="header">                       
             
-            <button class="button button">FIND RIGHT MARKETS</button>
+             
           </header>
           
  <!-- First Grid -->
- <h1>You are Logged IN</h1>
+ <h2 style="text-align:center">Welcome {{ user.first_name }}</h2>
+
+<div class="card">
+  <img src="C:\Users\avnee\Desktop\mypic.png" alt="John" style="width:100%">
+  <h1>{{ user.first_name }} {{ user.last_name }}</h1>
+  
+  <p>{{ user.email }}</p>
+  <div style="margin: 24px 0;">
+    <a><i class="fa fa-dribbble"></i></a> 
+    <a><i class="fa fa-twitter"></i></a>  
+    <a><i class="fa fa-linkedin"></i></a>  
+    <a><i class="fa fa-facebook"></i></a> 
+ </div>
+ <p><a href="{% url 'home' %}"><button>Logout</button></a></p>
+</div>
+<footer class="w3-container w3-padding-16 w3-center "> 
+    <p>Social Links </p> 
+<div class="w3-xlarge w3-padding-8">
+<i class="fa fa-facebook-official w3-hover-opacity"></i>
+<i class="fa fa-instagram w3-hover-opacity"></i>
+<i class="fa fa-snapchat w3-hover-opacity"></i>
+<i class="fa fa-pinterest-p w3-hover-opacity"></i>
+<i class="fa fa-twitter w3-hover-opacity"></i>
+<i class="fa fa-linkedin w3-hover-opacity"></i>
+</div>
+
+</footer>
+<script>
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else { 
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+    </script>
+ 
+</body>
+</html>

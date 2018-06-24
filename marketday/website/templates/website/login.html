@@ -208,20 +208,23 @@ nav a:hover::before {
 
 <!-- Navigation -->
 
-          <img src="C:\Users\User\Desktop\logo.png" alt="logo" class="logo">                   
+<a href="{% url 'home' %}"><img src="C:\Users\avnee\Downloads\logo.png" alt="logo" class="logo"></a>                   
           <nav>
           <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large  w3-padding-large w3-hover-white w3-large " href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
             <ul>  
                 <img src="https://nesea.org/sites/default/files/styles/thumbnail/public/user-icon-default_7496.png?itok=7T8FUjFN" alt="login" class="login"> 
                 <div class="topnav-right">
-                    <li><a href="#">Find Markets</a></li>
-                    <li><a href="#">Login</a></li>     
+                        <li><a href="{% url 'search' %}">Find Markets</a></li>
+                        <li><a href="{% url 'login' %}">Login</a></li>       
                 </div>                
                                                                    
             </ul>
           </nav>
 
 <!-- Header -->
+<header class="header">                       
+    <button class="button button">BECOME A MEMBER</button>           
+  </header>
 <form method="post">
   {% csrf_token %}
   
@@ -239,8 +242,9 @@ nav a:hover::before {
 	
     <hr>
     <button type="submit" class="registerbtn">Sign In</button>
-    <li><a href="{% url 'register' %}">Register
-    </a></li>  
+    <h4>Not a member yet</h4>
+    <h2><li><a href="{% url 'register' %}">Register
+    </a></li></h2>
 
 </form>
 <h1>{{ myName }}</h1>
@@ -251,11 +255,32 @@ nav a:hover::before {
                 
   </ul>
   </div>
-  
-  
+</div>
+   </div>
+   <footer class="w3-container w3-padding-16 w3-center "> 
+    <p>Social Links </p> 
+<div class="w3-xlarge w3-padding-8">
+<i class="fa fa-facebook-official w3-hover-opacity"></i>
+<i class="fa fa-instagram w3-hover-opacity"></i>
+<i class="fa fa-snapchat w3-hover-opacity"></i>
+<i class="fa fa-pinterest-p w3-hover-opacity"></i>
+<i class="fa fa-twitter w3-hover-opacity"></i>
+<i class="fa fa-linkedin w3-hover-opacity"></i>
+</div>
+
+</footer>
+<script>
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else { 
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+    </script>
  
-  
-  </div>
 
 
 </body>
